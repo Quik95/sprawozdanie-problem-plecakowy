@@ -4,7 +4,7 @@ using Problem_plecakowy;
 
 namespace Testy;
 
-public class BruteForceTests
+public class BruteForceWithBacktrackingTests
 {
     private static readonly List<Item> _testDataĆwiczenia = new()
     {
@@ -32,7 +32,7 @@ public class BruteForceTests
     [Test]
     public void PrzykładZĆwiczeń()
     {
-        var solution = BruteForce.FindSolution(10, _testDataĆwiczenia);
+        var solution = BruteForceWithBacktracking.FindSolution(10, _testDataĆwiczenia);
         Assert.AreEqual(
             new List<bool> {false, true, true, true, false},
             solution
@@ -41,7 +41,7 @@ public class BruteForceTests
     [Test]
     public void PrzykładZPrezentacji()
     {
-        var solution = BruteForce.FindSolution(7, _testDataPrezentacja);
+        var solution = BruteForceWithBacktracking.FindSolution(7, _testDataPrezentacja);
         Assert.AreEqual(
             new List<bool> {true, false, false, true, true},
             solution
