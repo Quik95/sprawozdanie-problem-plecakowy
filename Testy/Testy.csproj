@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Problem plecakowy\Problem plecakowy.csproj" />
+      <ProjectReference Include="..\Algorytmy\Algorytmy.csproj" />
     </ItemGroup>
 
 </Project>

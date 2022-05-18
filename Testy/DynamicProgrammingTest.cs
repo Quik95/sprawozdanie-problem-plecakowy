@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using NUnit.Framework;
-using Problem_plecakowy;
+using Algorytmy;
 
 namespace Testy;
 

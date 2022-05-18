@@ -1,15 +1,15 @@
-namespace Problem_plecakowy;
+namespace Algorytmy;
 
-public class DynamicProgramming
+public static class DynamicProgramming
 {
     public static List<bool> FindSolution(int capacity, List<Item> items)
     {
-        var decisionMatrix = Enumerable.Range(1, items.Count + 1).Select(_ => new List<int>(new int[capacity + 1]))
-            .ToList();
+        var decisionMatrix = Enumerable.Range(1, items.Count + 1).Select(_ => new int[capacity + 1])
+            .ToArray();
 
-        for (var item = 1; item < decisionMatrix.Count; item++)
+        for (var item = 1; item < decisionMatrix.Length; item++)
         {
-            for (var capacityLeft = 1; capacityLeft < decisionMatrix.First().Count; capacityLeft++)
+            for (var capacityLeft = 1; capacityLeft < decisionMatrix.First().Length; capacityLeft++)
             {
                 var currentItem = items[item-1];
                 if (currentItem.Size > capacityLeft)

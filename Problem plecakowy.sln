@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem plecakowy", "Problem plecakowy\Problem plecakowy.csproj", "{96616AF6-B0D9-4475-B01D-334C86560653}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorytmy", "Algorytmy\Algorytmy.csproj", "{96616AF6-B0D9-4475-B01D-334C86560653}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testy", "Testy\Testy.csproj", "{0379BCC7-8FF5-4988-9999-8272782A5CA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks", "Benchmarks\Benchmarks.csproj", "{013D4B9A-62FA-4132-8590-D506165A3DE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie4", "Zadanie4\Zadanie4.csproj", "{F01969F4-A767-4034-BD6D-8B01A0E5ED41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,13 @@ Global
 		{0379BCC7-8FF5-4988-9999-8272782A5CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0379BCC7-8FF5-4988-9999-8272782A5CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0379BCC7-8FF5-4988-9999-8272782A5CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013D4B9A-62FA-4132-8590-D506165A3DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013D4B9A-62FA-4132-8590-D506165A3DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013D4B9A-62FA-4132-8590-D506165A3DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013D4B9A-62FA-4132-8590-D506165A3DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F01969F4-A767-4034-BD6D-8B01A0E5ED41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F01969F4-A767-4034-BD6D-8B01A0E5ED41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F01969F4-A767-4034-BD6D-8B01A0E5ED41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F01969F4-A767-4034-BD6D-8B01A0E5ED41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

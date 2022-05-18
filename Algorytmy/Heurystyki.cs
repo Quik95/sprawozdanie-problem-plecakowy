@@ -1,22 +1,24 @@
-namespace Problem_plecakowy;
+namespace Algorytmy;
 
 public class Heurystyki
 {
-    public static List<bool> Random(int capacity, List<Item> items)
+    public static IEnumerable<bool> Random(int capacity, List<Item> items)
     {
-        var possibleCombinations = new List<List<bool>>();
-        BruteForce.generateAllBinaryStrings(items.Count, possibleCombinations);
-
         var rng = new Random();
-        int size;
-        int index;
+        var res = Enumerable.Range(1, items.Count).Select(_ => false).ToList();
+        int currentSize;
+        int lastIdx;
+
         do
         {
-            index = rng.Next(0, possibleCombinations.Count);
-            (size, _) = BruteForce.calculateTotalValueAndWeight(items, possibleCombinations[index]);
-        } while (size > capacity);
+            lastIdx = rng.Next(0, res.Count);
+            res[lastIdx] = true;
+            (currentSize, _) = BruteForce.CalculateTotalSizeAndValue(items, res);
+        } while (currentSize <= capacity);
+        
+        res[lastIdx] = false;
 
-        return possibleCombinations[index];
+        return res;
     }
 
     public static IEnumerable<bool> MinimumSize(int capacity, List<Item> items)

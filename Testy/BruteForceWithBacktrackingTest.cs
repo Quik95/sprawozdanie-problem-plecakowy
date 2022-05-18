@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using NUnit.Framework;
-using Problem_plecakowy;
+using Algorytmy;
 
 namespace Testy;
 
 public class BruteForceWithBacktrackingTests
 {
-    private static readonly List<Item> _testDataĆwiczenia = new()
+    private static readonly List<Item> TestDataĆwiczenia = new()
     {
         new Item(5, 3),
         new Item(3, 4),
@@ -15,7 +15,7 @@ public class BruteForceWithBacktrackingTests
         new Item(3, 1),
     };
 
-    private static readonly List<Item> _testDataPrezentacja = new()
+    private static readonly List<Item> TestDataPrezentacja = new()
     {
         new Item(1, 2),
         new Item(1, 1),
@@ -32,7 +32,7 @@ public class BruteForceWithBacktrackingTests
     [Test]
     public void PrzykładZĆwiczeń()
     {
-        var solution = BruteForceWithBacktracking.FindSolution(10, _testDataĆwiczenia);
+        var solution = BruteForceWithBacktracking.FindSolution(10, TestDataĆwiczenia);
         Assert.AreEqual(
             new List<bool> {false, true, true, true, false},
             solution
@@ -41,7 +41,7 @@ public class BruteForceWithBacktrackingTests
     [Test]
     public void PrzykładZPrezentacji()
     {
-        var solution = BruteForceWithBacktracking.FindSolution(7, _testDataPrezentacja);
+        var solution = BruteForceWithBacktracking.FindSolution(7, TestDataPrezentacja);
         Assert.AreEqual(
             new List<bool> {true, false, false, true, true},
             solution
