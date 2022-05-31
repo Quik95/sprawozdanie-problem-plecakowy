@@ -2,16 +2,17 @@ namespace Algorytmy;
 
 public class Heurystyki
 {
+    private static readonly Random Rng = new();
+
     public static IEnumerable<bool> Random(int capacity, List<Item> items)
     {
-        var rng = new Random();
         var res = Enumerable.Range(1, items.Count).Select(_ => false).ToList();
         int currentSize;
         int lastIdx;
 
         do
         {
-            lastIdx = rng.Next(0, res.Count);
+            lastIdx = Rng.Next(0, res.Count);
             res[lastIdx] = true;
             (currentSize, _) = BruteForce.CalculateTotalSizeAndValue(items, res);
         } while (currentSize <= capacity);

@@ -4,18 +4,13 @@ public static class BruteForce
 {
     public static IEnumerable<bool> FindSolution(int capacity, IList<Item> items)
     {
-        var combination = GenerateAllBinaryStrings(items.Count);
-
-        return _findBestSolution(combination, items, capacity);
-    }
-
-    private static IEnumerable<bool> _findBestSolution(IEnumerable<List<bool>> solutions, IList<Item> items, int capacity)
-    {
         var bestCombination = new List<bool>();
         var bestValue = int.MinValue;
-        
-        foreach (var solution in solutions)
+
+        var n = items.Count;
+        for (var i = 0; i < (int) Math.Pow(2, n); i++)
         {
+            var solution = Enumerable.Range(0, n).Select(j => (i >> j & 1) == 1).ToList();
             var (size, value) = CalculateTotalSizeAndValue(items, solution);
             if (size > capacity || value <= bestValue) continue;
             bestCombination = solution; 
@@ -39,13 +34,5 @@ public static class BruteForce
         }
 
         return new Tuple<int, int>(size, weight);
-    }
-
-    private static IEnumerable<List<bool>> GenerateAllBinaryStrings(int n)
-    {
-        for (var i = 0; i < (int) Math.Pow(2, n); i++)
-        {
-            yield return Enumerable.Range(0, n).Select(j => (i >> j & 1) == 1).ToList();
-        }
     }
 }

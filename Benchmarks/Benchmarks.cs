@@ -25,10 +25,10 @@ namespace Benchmarks
                     var data = RandomItemGenerator.Generate(n);
                     var capacity = RandomItemGenerator.GetKnapsackCapacity(data, b);
 
-                    var bf1 = Measure(BruteForce.FindSolution, capacity, data, 5);
-                    var bf2 = Measure(BruteForceWithBacktracking.FindSolution, capacity, data, 10);
+                    var bf1 = Measure(BruteForce.FindSolution, capacity, data, 2);
+                    var bf2 = Measure(BruteForceWithBacktracking.FindSolution, capacity, data, 5);
                     var dyn = Measure(DynamicProgramming.FindSolution, capacity, data);
-                    var rat = Measure(Heurystyki.Ratio, capacity, data, 10_000);
+                    var rat = Measure(Heurystyki.Ratio, capacity, data, 100_000);
 
                     var res = new IterationResult(n, bf1, bf2, dyn, rat);
                     switch (b)
@@ -85,7 +85,7 @@ namespace Benchmarks
 
         private record IterationResult(int n, double bruteForce, double bruteForceBacktracking, double dynamic, double ratio);
 
-        private static double Measure(Func<int, List<Item>, IEnumerable<bool>> func, int capacity, List<Item> data, int n = 50)
+        private static double Measure(Func<int, List<Item>, IEnumerable<bool>> func, int capacity, List<Item> data, int n = 100)
         {
             var measurements = new List<double>();
             foreach (var i in Enumerable.Range(1, n + 3))
@@ -93,7 +93,7 @@ namespace Benchmarks
                 var start = System.Diagnostics.Stopwatch.StartNew();
                 func(capacity, data);
                 start.Stop();
-                if (i == 1 || i == 2 || i == 3)
+                if (i is 1 or 2 or 3)
                     continue; // JIT warm-up
                 measurements.Add(start.Elapsed.TotalSeconds);
             }
